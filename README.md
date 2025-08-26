@@ -19,6 +19,7 @@ Follow these steps for a professional, scalable setup! 🌍🔒
 ---
 
 ## 2️⃣ Set Up CloudFront Global Distribution 🌐
+![S3 - CloudFront](./assets/S3-CloudFront.png)
 
 **Why use a CDN?**
 - 🌏 **Global Reach:** Distribute your content worldwide
@@ -42,7 +43,7 @@ CloudFront → Create Distribution
 
 ---
 
-## 3️⃣ Configure Your Homepage 🏠
+## Configure Your Homepage 🏠
 
 When users access your **root URL** (like `https://your-site.com`), CloudFront needs to know which file to show (usually `index.html`). If not set, visitors see an error.
 
@@ -56,7 +57,7 @@ Now, visitors always see your homepage!
 
 ---
 
-## 4️⃣ Test Your Global Website 🌎
+## Test Your Global Website 🌎
 
 - ⏳ **Wait for global deployment:** Status will show "Deploying" for 5-15 minutes (copies your content globally).
 
@@ -74,7 +75,8 @@ Now, visitors always see your homepage!
 
 ---
 
-## 5️⃣ Deploy Website Using Amplify + GitHub Integration 🤖
+## 3️⃣ Deploy Website Using Amplify + GitHub Integration 🤖
+![Aws Amplify + GitHub](./assets/AWS%20Amplify-GitHub.png)
 
 **Problem:**  
 Manual updates require uploading new files to S3 and managing CloudFront cache — time-consuming and error-prone.
@@ -88,7 +90,7 @@ Integrate **GitHub** with **AWS Amplify**:
 
 ---
 
-## 6️⃣ Create Amplify App with GitHub ⚙️
+## Create Amplify App with GitHub ⚙️
 
 Whenever you make changes to your code, your website automatically updates!  
 **Amplify** handles hosting and global distribution.
@@ -124,7 +126,7 @@ Amplify will now automatically set up your infrastructure: CloudFront for global
 
 ---
 
-## 7️⃣ Test Automatic Deployments 🔄
+## Test Automatic Deployments 🔄
 
 ```bash
 After updating "index.html" on GitHub, changes are automatically deployed.
@@ -154,7 +156,7 @@ Once your Amplify site is deployed and your content appears as expected:
 
 ---
 
-# Build Contact Form 📧 - Making Your Website Interactive
+# 4️⃣ Build Contact Form 📧 - Making Your Website Interactive
 
 > Contact forms allow visitors to reach you directly.  
 > You'll learn why a professional contact form needs more than just HTML!
@@ -343,6 +345,55 @@ Since your website is connected to GitHub, you can edit your code directly in yo
 - Update `.css`
 - Update `.js`
 - Commit changes to GitHub
+- After commit changes "AWS Amplify" will take 2-3 minutes to deploy changes.
+
+---
+
+## 7️⃣ Test Everything 🧪
+
+Let's make sure everything works end-to-end.
+```bash
+Visit your contact page - Go to your Amplify website and scroll down to the contact form section
+Fill out the form:
+Enter your name
+Enter your email address
+Write a test message
+Click "Send Message"
+Check it worked:
+You should see a success message on the webpage
+Check your email - you should get a notification within 30 seconds
+The form should clear after sending
+```
+![Contact Form Send Message](./assets/Send-Message.png)
+![Contact Form Successfully](./assets/Send-Success.png)
+
+### AWS Amplify 
+![Deploy Changes](./assets/AWS-Amplify-Deploy-Changes.png)
+![Deployment](./assets/AWS-Amplify-Deployment.png)
+![Output](./assets/Deploy-after-changes.png)
+
+### SNS Topics
+![SNS Topics](./assets/SNS-Subscribers.png)
+![Ahmed Message](./assets/Ahmed-Message.png)
+![Abd Elhamid Message](./assets/Abdo-Message.png)
+
+### If something goes wrong 😖
+```bash
+Check some of the common problems and solutions here. If you’re still running into issues, leave a comment with details so I can help out.
+
+- No email received?
+Check your spam folder
+Make sure you confirmed your SNS subscription
+Verify the Topic ARN in your Lambda code is correct
+
+- Form shows an error?
+Check your browser's developer console (F12) for error messages
+Make sure your Lambda Function URL is correct in the HTML
+
+- Still having issues?
+In Lambda, go to "Monitor" → "View CloudWatch logs"
+Look for error messages that explain what went wrong
+```
 
 ---
 
@@ -355,6 +406,7 @@ Since your website is connected to GitHub, you can edit your code directly in yo
 - 📧 **Contact Form:** Sends you email notifications when visitors send you a message
 - 📣 **SNS:** Send notifications to subscribers
 - 🦾 **AWS Lambda:** Serverless function to process contact form submissions and trigger notifications
+
 ---
 
 > Ready to deploy? Your website is now secure, fast, and professionally managed!  
