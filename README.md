@@ -19,6 +19,7 @@ Follow these steps for a professional, scalable setup! 🌍🔒
 ---
 
 ## 2️⃣ Set Up CloudFront Global Distribution 🌐
+
 ![S3 - CloudFront](./assets/S3-CloudFront.png)
 
 **Why use a CDN?**
@@ -43,7 +44,7 @@ CloudFront → Create Distribution
 
 ---
 
-## Configure Your Homepage 🏠
+## 🏠 Configure Your Homepage
 
 When users access your **root URL** (like `https://your-site.com`), CloudFront needs to know which file to show (usually `index.html`). If not set, visitors see an error.
 
@@ -57,7 +58,7 @@ Now, visitors always see your homepage!
 
 ---
 
-## Test Your Global Website 🌎
+## 🌎 Test Your Global Website
 
 - ⏳ **Wait for global deployment:** Status will show "Deploying" for 5-15 minutes (copies your content globally).
 
@@ -76,6 +77,7 @@ Now, visitors always see your homepage!
 ---
 
 ## 3️⃣ Deploy Website Using Amplify + GitHub Integration 🤖
+
 ![Aws Amplify + GitHub](./assets/AWS%20Amplify-GitHub.png)
 
 **Problem:**  
@@ -90,7 +92,7 @@ Integrate **GitHub** with **AWS Amplify**:
 
 ---
 
-## Create Amplify App with GitHub ⚙️
+## ⚙️ Create Amplify App with GitHub
 
 Whenever you make changes to your code, your website automatically updates!  
 **Amplify** handles hosting and global distribution.
@@ -126,7 +128,7 @@ Amplify will now automatically set up your infrastructure: CloudFront for global
 
 ---
 
-## Test Automatic Deployments 🔄
+## 🔄 Test Automatic Deployments
 
 ```bash
 After updating "index.html" on GitHub, changes are automatically deployed.
@@ -156,12 +158,12 @@ Once your Amplify site is deployed and your content appears as expected:
 
 ---
 
-# 4️⃣ Build Contact Form 📧 - Making Your Website Interactive
+# 4️⃣ Build Contact Form 📧 — Making Your Website Interactive
 
 > Contact forms allow visitors to reach you directly.  
 > You'll learn why a professional contact form needs more than just HTML!
 
-## 1️⃣ What Happens When Someone Clicks 'Submit'?  
+## What Happens When Someone Clicks 'Submit'?  
 ```bash
 Client-server exchange:
 1) JavaScript packages the data and makes an API call to a server
@@ -408,6 +410,8 @@ Look for error messages that explain what went wrong
 - 🦾 **AWS Lambda:** Serverless function to process contact form submissions and trigger notifications
 
 ---
+
+Check MY [AWS Builder Center](https://builder.aws.com/content/31piCGegopJKWHGrxUdk2dhvmpD/my-aws-builder-challenge-journey)
 
 > Ready to deploy? Your website is now secure, fast, and professionally managed!  
 > Happy coding! ✨
